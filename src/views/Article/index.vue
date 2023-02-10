@@ -1,8 +1,6 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="App-page">
-    <router-view></router-view>
-  </div>
+  <div class="article-page">Article</div>
 </template>
 <style lang="scss" scoped></style>
