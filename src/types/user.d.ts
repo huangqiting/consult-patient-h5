@@ -39,3 +39,14 @@ export type UserInfo = OmitUser & {
     finishedNumber: number
   }
 }
+
+// 家庭档案-患者信息
+export type Patient = {
+  name: string
+  idCard: string
+  defaultFlag: 0 | 1 // 0不是默认 1是默认患者
+  gender: 0 | 1 // 性别 1男 0女
+  genderValue?: string
+  age?: number
+  id?: string
+}

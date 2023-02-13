@@ -4,10 +4,21 @@
 // 2.暴露一个props属性，title设置标题，rightText设置标题
 
 import { useRouter } from 'vue-router'
-
 // 3.点击右侧文字按钮，通过事件来通知父组件
 const router = useRouter()
+// 标题名和右边按键名
+const props = defineProps<{
+  title?: string
+  rightText?: string
+  back?: Function
+}>()
+// 直接让父组件做出对应的逻辑
+const emit = defineEmits<{
+  (e: 'click-right'): void
+}>()
 const onClickLeft = () => {
+  //如果父组件传来一个函数 直接执行函数 就不跳转路由
+  if (props.back) return props.back()
   // 实现返回
   // Vue Router 将信息保存在 history.state上
   // history.state 来标记第一层路由的时候需要对 vue-router 的这一数据进行特殊的处理。
@@ -21,15 +32,6 @@ const onClickRight = () => {
   // 点击右侧文字按钮，执行逻辑
   emit('click-right')
 }
-// 标题名和右边按键名
-defineProps<{
-  title?: string
-  rightText?: string
-}>()
-// 直接让父组件做出对应的逻辑
-const emit = defineEmits<{
-  (e: 'click-right'): void
-}>()
 </script>
 
 <template>

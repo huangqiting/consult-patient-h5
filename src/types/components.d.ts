@@ -1,5 +1,6 @@
 // 给components下的全局组件设置类型
 import CpNavBar from '@/components/CpNavBar.vue'
+import CpRadioBtn from '@/components/CpRadioBtn.vue'
 // 对非ts/js文件模块进行类型扩充
 // 声明vue类型模块
 declare module 'vue' {
@@ -7,6 +8,7 @@ declare module 'vue' {
   interface GlobalComponents {
     // typeof 作用就是得到对应的TS类型
     CpNavBar: typeof CpNavBar
+    CpRadioBtn: typeof CpRadioBtn
   }
 }
 
