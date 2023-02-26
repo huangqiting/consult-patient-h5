@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import pinia from './stores'
-
+import 'virtual:svg-icons-register'
 // vant全局样式引入 放置main样式的上面 把main的优先级提上来
 import 'vant/lib/index.css'
 import './styles/main.scss'
